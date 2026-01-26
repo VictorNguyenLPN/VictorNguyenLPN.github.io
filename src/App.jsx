@@ -6,6 +6,7 @@ const tocItems = [
   { id: "bio", label: "Short Bio" },
   { id: "education", label: "Education" },
   { id: "publication", label: "Publication" },
+  { id: "projects", label: "Projects" },
   { id: "competition", label: "Competition" },
   { id: "certification", label: "Certification" },
 ];
@@ -49,6 +50,7 @@ function TableOfContents() {
             <a
               href={`#${item.id}`}
               className={`toc-link ${activeSection === item.id ? "active" : ""}`}
+              title={item.label}
               onClick={(e) => {
                 e.preventDefault();
                 scrollToSection(item.id);
@@ -68,28 +70,29 @@ function HomePage() {
     <>
       <section id="bio" className="intro">
         <h1>Short Bio</h1>
-        <p className="short-bio">
-          I am a third-year Computer Science student at{" "}
-          <a
-            href="https://it.tdtu.edu.vn/en"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="important"
-          >
-            Faculty of Information Technology, Ton Duc Thang University
-          </a>
-          , with research interests in{" "}
-          <span className="important">Computer Vision</span>,{" "}
-          <span className="important">Natural Language Processing</span>,{" "}
-          <span className="important">Time Series Forecasting</span>, and{" "}
-          <span className="important">Web Development</span>.
-        </p>
+        <div className="item">
+          {" "}
+          <p className="short-bio">
+            I am a third-year Computer Science student at{" "}
+            <a
+              href="https://it.tdtu.edu.vn/en"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="important"
+              title="Faculty of Information Technology, Ton Duc Thang University"
+            >
+              Faculty of Information Technology, Ton Duc Thang University
+            </a>
+            , with research interests in Computer Vision, Natural Language
+            Processing, Time Series Forecasting and Web Development.
+          </p>
+        </div>
       </section>
 
       <section id="education" className="education">
         <h1>Education</h1>
-        <div className="degree-item">
-          <div className="degree-block">
+        <div className="item">
+          <div className="block">
             <div className="degree-header">
               <div>
                 <h2 className="degree-title">Bachelor of Computer Science</h2>
@@ -98,27 +101,24 @@ function HomePage() {
                   Vietnam
                 </p>
               </div>
-              <span className="degree-period">2023 - 2027</span>
+              <h2 className="period">2023 - 2027</h2>
             </div>
-            <div className="degree-details">
+            {/* <div className="details">
               <p>
-                Graduation Thesis: <strong>Null</strong>
+                Graduation Thesis: <span className="important">Null</span>
               </p>
               <p>
-                Supervisor: <strong>PhD. Tran Luong Quoc Dai</strong>
+                Supervisor: <span className="important">Null</span>
               </p>
-              <p>
-                Submitted to: <strong>Null</strong>
-              </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
 
       <section id="publication" className="publication">
         <h1>Publication</h1>
-        <div className="publication-item">
-          <div className="publication-block">
+        <div className="item">
+          <div className="block">
             <div className="publication-header">
               <div>
                 <h2 className="publication-title">
@@ -126,38 +126,206 @@ function HomePage() {
                   GAN-Generated Images from Real Images
                 </h2>
               </div>
-              <span className="publication-period">2026</span>
+              <h2 className="period">2026</h2>
             </div>
-            <div className="publication-details">
+            <div className="details">
               <p>
-                Submitted to:{" "}
-                <strong>
+                DOI: <span className="important">Updating</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" className="projects">
+        <h1>Projects</h1>
+        <div className="item">
+          <div className="block">
+            <div className="project-header">
+              <div>
+                <h2 className="project-title">
                   <a
-                    href="https://www.dcest.org/"
+                    href="https://github.com/DomTechnology/datastorm"
                     target="_blank"
                     rel="noreferrer noopener"
                     className="important"
+                    title="DataStorm GitHub Repository"
                   >
-                    DCEST
+                    DataStorm
                   </a>
-                </strong>
+                </h2>
+              </div>
+              <h2 className="period">
+                <a
+                  href="https://drive.google.com/file/d/1qksnp924iOI4s5qwWvdedV6fYhsfN7y-/view?usp=sharing"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="important"
+                  title="Top 10, Encouragement Prize of Vietnam Datathon - DataStorm 2025"
+                >
+                  Top 10, Encouragement Prize of Vietnam Datathon - DataStorm
+                  2025
+                </a>
+              </h2>
+            </div>
+            <hr />
+            <div className="details">
+              <p className="project-info">
+                An end-to-end retail analytics and demand forecasting platform
+                for FMCG, combining interactive dashboards with ML-powered 7-day
+                forecasts.
               </p>
-              <p>
-                Supervisor:{" "}
-                <strong>
+              <h3 className="attributes">My role</h3>
+              <ul className="feature-list">
+                <li>
+                  Processed and analyzed multi-vertical retail data; selected
+                  forecasting approaches suited to FMCG seasonality.
+                </li>
+                <li>
+                  Implemented the ML forecasting service for SKU-level demand.
+                </li>
+                <li>Built end-to-end pipelines from ingestion to serving.</li>
+                <li>
+                  Contributed across frontend (Next.js/Tailwind) and backend
+                  (FastAPI + PostgreSQL + Redis) for analytics delivery.
+                </li>
+              </ul>
+              <h3 className="attributes">Features</h3>
+              <ul className="feature-list">
+                <li>
+                  Sales analytics (net sales, units, revenue) with geographic
+                  and channel breakdowns.
+                </li>
+                <li>
+                  7-day demand forecasting for inventory optimization and stock
+                  alerts.
+                </li>
+                <li>
+                  Pricing/discount impact analysis and supplier performance
+                  views.
+                </li>
+                <li>Interactive maps for multi-country store comparisons.</li>
+              </ul>
+            </div>
+          </div>
+          <div className="block">
+            <div className="project-header">
+              <div>
+                <h2 className="project-title">
                   <a
-                    href="https://orcid.org/0000-0001-9907-4066"
+                    href="https://github.com/DanielNguyen-05/AirForce"
                     target="_blank"
                     rel="noreferrer noopener"
                     className="important"
+                    title="AirForce GitHub Repository"
                   >
-                    PhD. Pham Van Huy
+                    AirForce
                   </a>
-                </strong>
+                </h2>
+              </div>
+              <span className="period">
+                <a
+                  href="https://www.facebook.com/share/p/1FmFRrUUNd"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="important"
+                  title="Top 11 NASA Space Apps Challenge 2025, Ho Chi Minh"
+                >
+                  Top 11 NASA Space Apps Challenge 2025, Ho Chi Minh
+                </a>
+              </span>
+            </div>
+            <hr />
+            <div className="details">
+              <p className="project-info">
+                A cloud-native platform for monitoring and forecasting air
+                quality using real-time satellite and ground-based environmental
+                data.
               </p>
-              <p>
-                Status: <strong>Peer-reviewing</strong>
+              <h3 className="attributes">My role</h3>
+              <ul className="feature-list">
+                <li>
+                  Trained deep learning LSTM model using WHO, TEMPO, AQ
+                  datasets.
+                </li>
+                <li>Built predictive pipelines for 7-days AQI forecasting.</li>
+                <li>
+                  Contributed to frontend visualization with React for
+                  interactive AQI chart.
+                </li>
+              </ul>
+              <h3 className="attributes">Features</h3>
+              <ul className="feature-list">
+                <li>
+                  Real-time data ingestion (TEMPO, NOAA, ground stations).
+                </li>
+                <li>Deep learning forecasting.</li>
+                <li>AQI alert system with WHO/EPA thresholds.</li>
+                <li>
+                  Interactive map visualization for temporal-spatial air quality
+                  tracking.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="block">
+            <div className="project-header">
+              <div>
+                <h2 className="project-title">
+                  <a
+                    href="https://github.com/VictorNguyenLPN/athstock"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="important"
+                    title="athStock GitHub Repository"
+                  >
+                    athStock
+                  </a>
+                </h2>
+              </div>
+              <span className="period">
+                <a
+                  href="https://drive.google.com/file/d/1ExQUp3LUt_MafnuW0qE9KedmzF64fVCD/view?usp=sharing"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="important"
+                  title="3rd Prize, TDTU Student Scientific Research 2024 - 2025"
+                >
+                  3rd Prize, TDTU Student Scientific Research 2024 - 2025
+                </a>
+              </span>
+            </div>
+            <hr />
+            <div className="details">
+              <p className="project-info">
+                A real-time stock intelligence platform combining AI forecasting
+                and community blogging for retail investors.
               </p>
+              <h3 className="attributes">My role</h3>
+              <ul className="feature-list">
+                <li>
+                  Designed the event-driven pipeline with WebSockets for live
+                  price streams.
+                </li>
+                <li>
+                  Trained PhoBERT models for trend prediction and sentiment
+                  scoring.
+                </li>
+                <li>
+                  Built the blogging and publishing workflow for investor
+                  insights.
+                </li>
+              </ul>
+              <h3 className="attributes">Features</h3>
+              <ul className="feature-list">
+                <li>Live market streaming with TailwindCSS dashboards.</li>
+                <li>Deep learning trend forecasts from LSTM models.</li>
+                <li>PhoBERT-powered sentiment analysis on financial news.</li>
+                <li>
+                  Community blogging feed for investment analysis and
+                  predictions.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -165,12 +333,54 @@ function HomePage() {
 
       <section id="competition" className="competition">
         <h1>Competition</h1>
-        <ul className="competition-list">
-          <li>Top 11 NASA Space Apps Challenge Ho Chi Minh 2025</li>
-          <li>Encouragement Prize of Vietnam Datathon - Datastorm 2025</li>
-          <li>Encouragement Prize of AI Olympiad Southern Vietnam 2025</li>
-          <li>3rd Prize of TDTU student science research 2024</li>
-        </ul>
+        <div className="item">
+          <ul className="competition-list">
+            <li>
+              <a
+                href="https://www.facebook.com/spaceappshochiminh/posts/pfbid02Ep76u15pcUi3n5QwzMZ97M5dpuuyqz7aLwLCHW7uv5zDugmWjJ8tKyyBmyxbRJorl?rdid=qOAdRoq1W3MSqjWg#"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="important"
+                title="Top 11 NASA Space Apps Challenge Ho Chi Minh 2025"
+              >
+                Top 11 NASA Space Apps Challenge Ho Chi Minh 2025
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/file/d/1qksnp924iOI4s5qwWvdedV6fYhsfN7y-/view?usp=drive_link"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="important"
+                title="Top 10, Encouragement Prize of Vietnam Datathon - Datastorm 2025"
+              >
+                Top 10, Encouragement Prize of Vietnam Datathon - Datastorm 2025
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/file/d/11rybxdasods6yYZj16NEf0ueDEGJfl5I/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="important"
+                title="Encouragement Prize of AI Olympiad Southern Vietnam 2025"
+              >
+                Encouragement Prize of AI Olympiad Southern Vietnam 2025
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/file/d/1ExQUp3LUt_MafnuW0qE9KedmzF64fVCD/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="important"
+                title="3rd Prize of TDTU student science research 2024"
+              >
+                3rd Prize of TDTU student science research 2024
+              </a>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section id="certification" className="certification">
@@ -235,11 +445,11 @@ function App() {
       <div className="page">
         <header className="topbar">
           <div>
-            <p className="title">AI/ML Engineer</p>
+            <h2 className="title">AI/ML Engineer</h2>
             <h1 className="name">Nguyen Quang Huy</h1>
             <div className="contacts">
               <a
-                className="contact"
+                className="important"
                 href="https://www.linkedin.com/in/nguyenquanghuy040805/"
                 target="_blank"
                 rel="noreferrer noopener"
@@ -248,7 +458,7 @@ function App() {
                 <Linkedin size={20} />
               </a>
               <a
-                className="contact"
+                className="important"
                 href="https://github.com/VictorNguyenLPN"
                 target="_blank"
                 rel="noreferrer noopener"
@@ -257,25 +467,27 @@ function App() {
                 <Github size={20} />
               </a>
               <a
-                className="contact"
+                className="important"
                 href="https://orcid.org/0009-0003-3203-0415"
                 target="_blank"
                 rel="noreferrer noopener"
+                title="ORCID"
               >
                 ORCID
               </a>
               <a
-                className="contact"
+                className="important"
                 href="mailto:nqhuy.aie@gmail.com"
                 target="_blank"
                 rel="noreferrer noopener"
+                title="Email"
               >
                 <span>nqhuy.aie@gmail.com</span>
               </a>
             </div>
           </div>
           <div className="top-right">
-            <span className="last-updated">Last updated: {updateDate}</span>
+            <h4 className="last-updated">Last updated: {updateDate}</h4>
             <nav className="nav">
               <a
                 href="/"
@@ -284,6 +496,7 @@ function App() {
                   e.preventDefault();
                   navigate("home");
                 }}
+                title="Home"
               >
                 Home
               </a>
@@ -294,6 +507,7 @@ function App() {
                   e.preventDefault();
                   navigate("blog");
                 }}
+                title="Blog"
               >
                 Blog
               </a>
