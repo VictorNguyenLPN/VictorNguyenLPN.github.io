@@ -1,6 +1,28 @@
+/* ============================================
+   CSS ORGANIZATION (ITCSS + BEM-inspired)
+   1. Base/Reset
+   2. Layout (page structure)
+   3. Components (reusable UI elements)
+   4. Sections (content sections)
+   5. Media Queries (desktop-first)
+   ============================================ */
+
+/* ============================================
+   1. BASE / RESET
+   ============================================ */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* ============================================
+   2. LAYOUT
+   ============================================ */
 .page {
   max-width: 900px;
   margin: var(--spacing-4xl) auto;
+  overflow-x: hidden;
 }
 
 .topbar {
@@ -11,12 +33,45 @@
   margin-bottom: var(--spacing-3xl);
 }
 
+.top-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--spacing-md);
+}
+
+.content {
+  display: grid;
+  gap: var(--spacing-xl);
+  flex: 1;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.footer {
+  margin-top: var(--spacing-4xl);
+  padding-top: var(--spacing-2xl);
+  text-align: center;
+}
+
+.footer p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: var(--font-size-base);
+}
+
+/* ============================================
+   3. COMPONENTS
+   ============================================ */
+
+/* --- Typography --- */
 .title {
   padding: var(--spacing-md) 0;
+  font-weight: 200;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-muted);
-  font-weight: 200;
 }
 
 .name {
@@ -26,28 +81,7 @@
   color: var(--color-text);
 }
 
-.contacts {
-  display: flex;
-  gap: var(--spacing-xl);
-  padding: var(--spacing-lg) 0;
-}
-
-.important:hover {
-  color: var(--color-accent);
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.top-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: var(--spacing-md);
-}
-
-.attributes {
-  padding: var(--spacing-sm) 0;
-}
+/* --- Navigation --- */
 .nav {
   display: flex;
   gap: var(--spacing-xl);
@@ -59,16 +93,16 @@
   padding: var(--spacing-sm) 0;
   font-weight: 500;
   color: var(--color-muted);
-  transition: color var(--transition-base);
   cursor: pointer;
+  transition: color var(--transition-base);
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  left: 0;
   right: 0;
   bottom: 2px;
+  left: 0;
   height: 3px;
   background: var(--color-accent);
   transform: scaleX(0);
@@ -89,22 +123,30 @@
   color: var(--color-accent);
 }
 
-.actions {
+/* --- Contacts --- */
+.contacts {
   display: flex;
-  gap: var(--spacing-md);
-  justify-content: flex-end;
-  background: var(--color-bg);
+  gap: var(--spacing-xl);
+  padding: var(--spacing-lg) 0;
 }
 
+/* --- Links & Interactive --- */
+.important:hover {
+  color: var(--color-accent);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* --- Icon Buttons --- */
 .icon {
-  width: 34px;
-  height: 34px;
   display: grid;
   place-items: center;
+  width: 34px;
+  height: 34px;
+  background: #fff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   color: var(--color-text);
-  background: #fff;
   transition: transform var(--transition-fast), box-shadow var(--transition-base);
 }
 
@@ -113,42 +155,50 @@
   box-shadow: 0 10px 30px rgba(242, 166, 90, 0.18);
 }
 
+/* --- Actions Container --- */
+.actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+  background: var(--color-bg);
+}
+
+/* --- Table of Contents --- */
 .toc {
   position: fixed;
   top: 100px;
   left: calc(50% - 450px - 230px);
-  height: fit-content;
-  width: 180px;
-  padding: var(--spacing-lg);
   z-index: 100;
+  width: 180px;
+  height: fit-content;
+  padding: var(--spacing-lg);
 }
 
 .toc-title {
   margin: 0 0 var(--spacing-md) 0;
   font-size: 20px;
   font-weight: 600;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
+  text-transform: uppercase;
   color: var(--color-muted);
 }
 
 .toc-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .toc-link {
   display: block;
-  padding: var(--spacing-xs) 0;
+  padding: var(--spacing-xs) 0 var(--spacing-xs) var(--spacing-md);
   font-size: var(--font-size-base);
   color: var(--color-muted);
-  transition: color var(--transition-base);
   border-left: 2px solid transparent;
-  padding-left: var(--spacing-md);
+  transition: color var(--transition-base);
 }
 
 .toc-link:hover {
@@ -156,129 +206,107 @@
 }
 
 .toc-link.active {
+  font-weight: 500;
   color: var(--color-accent);
   border-left-color: var(--color-accent);
-  font-weight: 500;
 }
 
-.content {
-  display: grid;
-  gap: var(--spacing-xl);
-  flex: 1;
-}
+/* ============================================
+   4. SECTIONS (Content Areas)
+   ============================================ */
 
-
-.blog p {
-  font-size: var(--font-size-base);
-}
-
-.publication-item {
-  margin-top: var(--spacing-lg);
-}
-
-.publication-block {
-  margin: 0 0 var(--spacing-lg) 0;
-}
-
-.publication-header, .project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: var(--spacing-md);
-  margin: 0 0 var(--spacing-md) 0 ;
-}
-
-.publication-title, .project-title {
-  margin: 0;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-.period {
-  font-size: var(--font-size-md);
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.details {
-  margin: 0 0 0 0;
-  gap: var(--spacing-xs);
-  font-size: var(--font-size-base);
+/* --- Shared Section Styles --- */
+section {
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .item {
   margin-top: var(--spacing-lg);
+  max-width: 100%;
 }
 
-.degree-header {
+.block {
+  margin-bottom: var(--spacing-lg);
+  max-width: 100%;
+}
+
+.attributes {
+  padding: var(--spacing-sm) 0;
+}
+
+/* .period {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+} */
+
+.details {
+  margin: 0;
+  gap: var(--spacing-xs);
+  font-size: var(--font-size-base);
+}
+
+/* --- Section Headers (unified) --- */
+.degree-header,
+.publication-header,
+.project-header {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
-.degree-title {
+/* --- Section Titles (unified) --- */
+.degree-title,
+.publication-title,
+.project-title {
   margin: 0;
   font-size: var(--font-size-md);
   font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
+/* --- Education --- */
 .degree-info {
   margin: 0;
   padding: 0;
   color: var(--color-muted);
 }
 
-.block {
-  margin: 0 0 var(--spacing-lg) 0;
-}
-
-.project-link {
-  margin: var(--spacing-md) 0 0 0;
-  font-size: var(--font-size-base);
-}
-
-.competition-list, .certification-list {
-  margin: var(--spacing-lg) 0 0 0;
+/* --- Lists (unified) --- */
+.competition-list,
+.certification-list,
+.feature-list {
   display: grid;
   gap: var(--spacing-sm);
-  font-size: var(--font-size-base);
+  margin: var(--spacing-lg) 0 0 0;
   padding-left: var(--spacing-xl);
+  font-size: var(--font-size-base);
 }
 
 .feature-list {
-  margin: 0;
-  display: grid;
-  gap: var(--spacing-sm);
-  font-size: var(--font-size-base);
-  padding-left: var(--spacing-xl);
+  margin-top: 0;
 }
 
-.competition-list, .certification-list li {
-  margin: 0;
-}
-
+.competition-list li,
+.certification-list li,
 .feature-list li {
   margin: 0;
 }
 
-.competition, .certification {
-  padding: 0 0 var(--spacing-lg) 0;
-}
-
-.footer {
-  margin-top: var(--spacing-4xl);
-  padding-top: var(--spacing-2xl);
-  text-align: center;
-}
-
-.footer p {
-  margin: 0;
-  color: var(--color-muted);
+/* --- Blog --- */
+.blog p {
   font-size: var(--font-size-base);
 }
 
-/* Extra Large Screens (1400px+) */
+/* ============================================
+   5. MEDIA QUERIES (Desktop-first)
+   ============================================ */
+
+/* --- Extra Large Screens (1400px+) --- */
 @media (min-width: 1400px) {
   .page {
     max-width: 900px;
@@ -289,7 +317,7 @@
   }
 }
 
-/* Large Screens (1200px - 1399px) */
+/* --- Large Screens (1200px - 1399px) --- */
 @media (max-width: 1399px) {
   .page {
     max-width: 900px;
@@ -301,8 +329,8 @@
   }
 }
 
-/* Medium-Large Screens (992px - 1199px) */
-@media (max-width: 1199px) {
+/* --- Medium-Large Screens (992px - 1199px) --- */
+@media (max-width: 1333px) {
   .page {
     max-width: 850px;
     padding: 0 var(--spacing-xl);
@@ -313,14 +341,14 @@
   }
 }
 
-/* Medium Screens / Tablets (768px - 991px) */
+/* --- Medium Screens / Tablets (768px - 991px) --- */
 @media (max-width: 991px) {
   .page {
-    max-width: 100%;
+    box-sizing: border-box;
     width: 100%;
+    max-width: 100%;
     margin: var(--spacing-2xl) auto;
     padding: 0 var(--spacing-xl);
-    box-sizing: border-box;
   }
 
   .topbar {
@@ -338,7 +366,7 @@
   }
 }
 
-/* Small Screens / Large Phones (576px - 767px) */
+/* --- Small Screens / Large Phones (576px - 767px) --- */
 @media (max-width: 767px) {
   .page {
     margin: var(--spacing-xl) auto;
@@ -369,16 +397,15 @@
     gap: var(--spacing-xs);
   }
 
-  .degree-period,
-  .period {
+  /* .period {
     font-size: var(--font-size-sm);
-  }
+  } */
 
   .competition-list,
   .certification-list,
   .feature-list {
-    padding-left: var(--spacing-lg);
     gap: var(--spacing-xs);
+    padding-left: var(--spacing-xl);
   }
 
   .toc {
@@ -386,7 +413,7 @@
   }
 }
 
-/* Extra Small Screens / Phones (max-width: 575px) */
+/* --- Extra Small Screens / Phones (max-width: 575px) --- */
 @media (max-width: 575px) {
   .page {
     margin: var(--spacing-lg) auto;
@@ -406,9 +433,9 @@
     font-size: calc(var(--font-size-lg) * 0.9);
   }
 
+  .degree-title,
   .publication-title,
-  .project-title,
-  .degree-title {
+  .project-title {
     font-size: var(--font-size-base);
   }
 
@@ -417,10 +444,12 @@
   }
 }
 
-/* Very Small Screens (max-width: 425px) */
+/* --- Very Small Screens (max-width: 425px) --- */
 @media (max-width: 425px) {
   .page {
     padding: 0 var(--spacing-sm);
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .contacts {
@@ -431,23 +460,25 @@
     gap: var(--spacing-md);
   }
 
+  .period {
+    white-space: normal;
+    font-size: var(--font-size-sm);
+  }
+
   .competition-list,
   .certification-list,
   .feature-list {
     padding-left: var(--spacing-md);
   }
 
+  .competition-list li,
+  .certification-list li,
+  .feature-list li {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
   .toc {
     display: none;
   }
-}
-
-/* Prevent horizontal overflow on all screen sizes */
-html, body {
-  overflow-x: hidden;
-  max-width: 100vw;
-}
-
-.page {
-  overflow-x: hidden;
 }
