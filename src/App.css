@@ -40,6 +40,16 @@ body {
   gap: var(--spacing-md);
 }
 
+.badges-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.badge {
+  height: 20px;
+}
+
 .content {
   display: grid;
   gap: var(--spacing-xl);

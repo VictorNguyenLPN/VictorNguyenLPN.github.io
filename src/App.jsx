@@ -428,7 +428,14 @@ function App() {
             </div>
           </div>
           <div className="top-right">
-            <h4 className="last-updated">Last updated: {updateDate}</h4>
+            <div className="badges-row">
+              <img
+                src="https://visitor-badge.laobi.icu/badge?page_id=VictorNguyenLPN.github.io"
+                alt="Visitors"
+                className="badge"
+              />
+              <h4 className="last-updated">Last updated: {updateDate}</h4>
+            </div>
             <nav className="nav">
               <a
                 href="/"
