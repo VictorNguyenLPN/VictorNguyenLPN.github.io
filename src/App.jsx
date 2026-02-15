@@ -270,8 +270,13 @@ function HomePage() {
             >
               Faculty of Information Technology, Ton Duc Thang University
             </ExternalLink>
-            , with research interests in Computer Vision, Natural Language
-            Processing, Time Series Forecasting and Web Development.
+            , with a primary focus on AI research in Computer Vision, Natural
+            Language Processing, and Time Series Forecasting. I am particularly
+            interested in bridging theoretical research with real-world AI
+            applications through full-stack system development. I am a prize
+            winner of the Southern AI Olympiad and the Student Scientific
+            Research Competition at Ton Duc Thang University, and have
+            consistently ranked highly in hackathons and datathons.
           </p>
         </div>
       </section>
@@ -374,16 +379,9 @@ const BlogPage = memo(function BlogPage() {
 // ============================================
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
-  const [updateDate, setUpdateDate] = useState("");
+  const [updateDate, setUpdateDate] = useState("15 Feb 2026");
 
   useEffect(() => {
-    const today = new Date().toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
-    setUpdateDate(today);
-
     const handlePopState = () => {
       const path = window.location.pathname;
       setCurrentPage(path === "/blog" ? "blog" : "home");
@@ -428,14 +426,14 @@ function App() {
             </div>
           </div>
           <div className="top-right">
-            <div className="badges-row">
-              <img
-                src="https://visitor-badge.laobi.icu/badge?page_id=VictorNguyenLPN.github.io"
-                alt="Visitors"
-                className="badge"
-              />
-              <h4 className="last-updated">Last updated: {updateDate}</h4>
-            </div>
+            {/* <div className="badges-row"> */}
+            <img
+              src="https://visitor-badge.laobi.icu/badge?page_id=VictorNguyenLPN.github.io"
+              alt="Visitors"
+              className="badge"
+            />
+            <h4 className="last-updated">Last updated: {updateDate}</h4>
+            {/* </div> */}
             <nav className="nav">
               <a
                 href="/"
