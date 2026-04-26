@@ -2,9 +2,6 @@ import { useState, useEffect, useCallback, memo } from "react";
 import { Linkedin, Github } from "lucide-react";
 import "./App.css";
 
-// ============================================
-// CONSTANTS
-// ============================================
 const TOC_ITEMS = [
   { id: "bio", label: "Short Bio" },
   { id: "education", label: "Education" },
@@ -26,9 +23,6 @@ const EXTERNAL_LINKS = {
 
 const SCROLL_OFFSET = 150;
 
-// ============================================
-// REUSABLE COMPONENTS
-// ============================================
 const ExternalLink = memo(function ExternalLink({
   href,
   title,
@@ -48,9 +42,6 @@ const ExternalLink = memo(function ExternalLink({
   );
 });
 
-// ============================================
-// TABLE OF CONTENTS
-// ============================================
 const TableOfContents = memo(function TableOfContents() {
   const [activeSection, setActiveSection] = useState("bio");
 
@@ -102,9 +93,6 @@ const TableOfContents = memo(function TableOfContents() {
   );
 });
 
-// ============================================
-// PROJECT BLOCK COMPONENT
-// ============================================
 const ProjectBlock = memo(function ProjectBlock({
   title,
   titleHref,
@@ -126,9 +114,7 @@ const ProjectBlock = memo(function ProjectBlock({
           </h2>
         </div>
         <span className="period">
-          {/* <ExternalLink title={period}> */}
           {period}
-          {/* </ExternalLink> */}
         </span>
       </div>
       <hr />
@@ -156,9 +142,7 @@ const ProjectBlock = memo(function ProjectBlock({
   );
 });
 
-// ============================================
-// HOME PAGE
-// ============================================
+
 function HomePage() {
   const projects = [
     {
@@ -303,7 +287,7 @@ function HomePage() {
         <h1>Publication</h1>
         <ul className="item publication-list">
           <li>
-            Nguyen, Q. H., &amp; Pham, V. H. (2026).{" "}
+            Quang Huy Nguyen and Van Huy Pham (2026).{" "}
             <strong>
               ASBW: A frequency-domain analysis approach for distinguishing
               GAN-generated images from real images
@@ -370,9 +354,7 @@ function HomePage() {
   );
 }
 
-// ============================================
-// BLOG PAGE
-// ============================================
+
 const BlogPage = memo(function BlogPage() {
   return (
     <section className="blog">
@@ -382,9 +364,7 @@ const BlogPage = memo(function BlogPage() {
   );
 });
 
-// ============================================
-// MAIN APP
-// ============================================
+
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
   const updateDate = "26 Apr 2026";
