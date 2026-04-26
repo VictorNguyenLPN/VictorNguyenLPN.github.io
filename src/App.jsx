@@ -11,15 +11,17 @@ const TOC_ITEMS = [
   { id: "publication", label: "Publication" },
   { id: "projects", label: "Projects" },
   { id: "competition", label: "Competition" },
+  { id: "skills", label: "Skills" },
   { id: "certification", label: "Certification" },
 ];
 
 const EXTERNAL_LINKS = {
+  homepage: "https://victornguyenlpn.github.io/",
   linkedin: "https://www.linkedin.com/in/nguyenquanghuy040805/",
   github: "https://github.com/VictorNguyenLPN",
   orcid: "https://orcid.org/0009-0003-3203-0415",
   email: "mailto:nqhuy.aie@gmail.com",
-  tdtu: "https://it.tdtu.edu.vn/en",
+  emailTDTU: "mailto:nguyenquanghuy.st@tdtu.edu.vn",
 };
 
 const SCROLL_OFFSET = 150;
@@ -43,21 +45,6 @@ const ExternalLink = memo(function ExternalLink({
     >
       {children}
     </a>
-  );
-});
-
-const SectionHeader = memo(function SectionHeader({
-  title,
-  period,
-  headerClass,
-  periodElement = "h2",
-}) {
-  const PeriodTag = periodElement;
-  return (
-    <div className={headerClass}>
-      <div>{title}</div>
-      <PeriodTag className="period">{period}</PeriodTag>
-    </div>
   );
 });
 
@@ -126,6 +113,7 @@ const ProjectBlock = memo(function ProjectBlock({
   description,
   roles,
   features,
+  stack,
 }) {
   return (
     <div className="block">
@@ -138,9 +126,9 @@ const ProjectBlock = memo(function ProjectBlock({
           </h2>
         </div>
         <span className="period">
-          <ExternalLink href={periodHref} title={period}>
-            {period}
-          </ExternalLink>
+          {/* <ExternalLink title={period}> */}
+          {period}
+          {/* </ExternalLink> */}
         </span>
       </div>
       <hr />
@@ -160,6 +148,9 @@ const ProjectBlock = memo(function ProjectBlock({
             <li key={index}>{feature}</li>
           ))}
         </ul>
+
+        <h3 className="attributes">Tech Stack</h3>
+        <p>{stack}</p>
       </div>
     </div>
   );
@@ -178,18 +169,20 @@ function HomePage() {
       periodHref:
         "https://drive.google.com/file/d/1qksnp924iOI4s5qwWvdedV6fYhsfN7y-/view?usp=sharing",
       description:
-        "An end-to-end retail analytics and demand forecasting platform for FMCG, combining interactive dashboards with ML-powered 7-day forecasts.",
+        "An end-to-end retail analytics and SKU-level demand forecasting platform for FMCG, integrating time-series modeling with interactive dashboards.",
       roles: [
-        "Processed and analyzed multi-vertical retail data; selected forecasting approaches suited to FMCG seasonality.",
-        "Implemented the ML forecasting service for SKU-level demand.",
-        "Built end-to-end pipelines from ingestion to serving.",
+        "Engineered SKU-level time-series features (lag, rolling statistics, seasonal encodings).",
+        "Developed XGBoost forecasting models achieving 5% lower MAPE than seasonal baseline.",
+        "Deployed forecasting API with FastAPI and built analytics dashboard with React and Next.js.",
       ],
       features: [
-        "Sales analytics (net sales, units, revenue) with geographic and channel breakdowns.",
+        "Interactive sales analytics with geo/channel drill-down.",
         "7-day demand forecasting for inventory optimization and stock alerts.",
-        "Pricing/discount impact analysis and supplier performance views.",
-        "Interactive maps for multi-country store comparisons.",
+        "Price elasticity and promotion impact analysis.",
+        "Multi-country store comparison via geospatial visualization.",
       ],
+      stack:
+        "Frontend: Next.js, React, shadcn/ui, Tailwind CSS | Backend: FastAPI, PostgreSQL, Redis | ML: Pandas, Scikit-learn, XGBoost",
     },
     {
       title: "AirForce",
@@ -197,18 +190,19 @@ function HomePage() {
       period: "Top 11 NASA Space Apps Challenge 2025, Ho Chi Minh",
       periodHref: "https://www.facebook.com/share/p/1FmFRrUUNd",
       description:
-        "A cloud-native platform for monitoring and forecasting air quality using real-time satellite and ground-based environmental data.",
+        "An air quality monitoring and 7-day AQI forecasting platform integrating satellite, ground-station, and meteorological data streams.",
       roles: [
-        "Trained deep learning LSTM model using WHO, TEMPO, AQ datasets.",
-        "Built predictive pipelines for 7-days AQI forecasting.",
-        "Contributed to frontend visualization with React for interactive AQI chart.",
+        "Developed LSTM-based time-series models for 7-day AQI forecasting using multi-source environmental datasets.",
+        "Built forecasting pipeline and contributed to interactive AQI visualization using React.",
       ],
       features: [
-        "Real-time data ingestion (TEMPO, NOAA, ground stations).",
-        "Deep learning forecasting.",
+        "Real-time ingestion from satellite and ground-based environmental sources.",
+        "Deep learning-based 7-day AQI forecasting.",
         "AQI alert system with WHO/EPA thresholds.",
-        "Interactive map visualization for temporal-spatial air quality tracking.",
+        "Temporal-spatial visualization for air quality monitoring.",
       ],
+      stack:
+        "Frontend: React, Next.js, Tailwind CSS | Backend: FastAPI, PostgreSQL | ML: PyTorch, Pandas, NumPy, LSTM",
     },
     {
       title: "athStock",
@@ -217,18 +211,20 @@ function HomePage() {
       periodHref:
         "https://drive.google.com/file/d/1ExQUp3LUt_MafnuW0qE9KedmzF64fVCD/view?usp=sharing",
       description:
-        "A real-time stock intelligence platform combining AI forecasting and community blogging for retail investors.",
+        "A real-time stock platform integrating deep learning-based forecasting, NLP-driven sentiment analysis, and live market data streaming.",
       roles: [
-        "Designed the event-driven pipeline with WebSockets for live price streams.",
-        "Trained PhoBERT models for trend prediction and sentiment scoring.",
-        "Built the blogging and publishing workflow for investor insights.",
+        "Designed architecture using WebSockets for real-time stock price streaming.",
+        "Developed LSTM models for short-term trend forecasting and fine-tuned PhoBERT for sentiment analysis.",
+        "Built blogging and publishing platform.",
       ],
       features: [
-        "Live market streaming with TailwindCSS dashboards.",
-        "Deep learning trend forecasts from LSTM models.",
-        "PhoBERT-powered sentiment analysis on financial news.",
-        "Community blogging feed for investment analysis and predictions.",
+        "Real-time stock dashboards with live price updates.",
+        "Deep learning-based trend forecasting.",
+        "NLP-powered sentiment scoring on Vietnamese financial news.",
+        "Community blogging platform for investment insights.",
       ],
+      stack:
+        "Frontend: React, Next.js, Tailwind CSS | Backend: FastAPI / Node.js, PostgreSQL, WebSockets | ML/NLP: PyTorch, LSTM, PhoBERT, Pandas",
     },
   ];
 
@@ -252,8 +248,18 @@ function HomePage() {
   ];
 
   const certifications = [
-    "The Test of English for International Communication (TOEIC) - 845/990.",
+    "TOEIC (Listening: 480/495; Reading: 365/495; Speaking: 120/200; Writing: 150/200).",
     "Agile Development & Scrum Framework (Techbase Vietnam).",
+  ];
+
+  const skills = [
+    "Languages: Python, JavaScript, SQL.",
+    "ML/DL: PyTorch, scikit-learn, Hugging Face.",
+    "Data & ETL: Pandas, NumPy.",
+    "APIs & Serving: FastAPI, Flask, ExpressJS.",
+    "Visualization: Matplotlib, Seaborn, Plotly.",
+    "Datastores: MySQL, MongoDB.",
+    "Frontend: React, TailwindCSS.",
   ];
 
   return (
@@ -263,20 +269,12 @@ function HomePage() {
         <h1>Short Bio</h1>
         <div className="item">
           <p className="short-bio">
-            I am a third-year Computer Science student at{" "}
-            <ExternalLink
-              href={EXTERNAL_LINKS.tdtu}
-              title="Faculty of Information Technology, Ton Duc Thang University"
-            >
-              Faculty of Information Technology, Ton Duc Thang University
-            </ExternalLink>
-            , with a primary focus on AI research in Computer Vision, Natural
-            Language Processing, and Time Series Forecasting. I am particularly
-            interested in bridging theoretical research with real-world AI
-            applications through full-stack system development. I am a prize
-            winner of the Southern AI Olympiad and the Student Scientific
-            Research Competition at Ton Duc Thang University, and have
-            consistently ranked highly in hackathons and datathons.
+            I am a third-year Computer Science student at Ton Duc Thang
+            University, focusing on AI research in Multimodal Learning, Computer
+            Vision, and Natural Language Processing. My work centers on bridging
+            research and real-world applications, from developing deep learning
+            models to building end-to-end AI systems across CV, NLP, and
+            time-series forecasting.
           </p>
         </div>
       </section>
@@ -303,24 +301,24 @@ function HomePage() {
       {/* Publication */}
       <section id="publication" className="publication">
         <h1>Publication</h1>
-        <div className="item">
-          <div className="block">
-            <div className="publication-header">
-              <div>
-                <h2 className="publication-title">
-                  ASBW: A Frequency-Domain Analysis Approach for Distinguishing
-                  GAN-Generated Images from Real Images
-                </h2>
-              </div>
-              <h2 className="period">2026</h2>
-            </div>
-            <div className="details">
-              <p>
-                DOI: <span className="important">Updating</span>
-              </p>
-            </div>
-          </div>
-        </div>
+        <ul className="item publication-list">
+          <li>
+            Nguyen, Q. H., &amp; Pham, V. H. (2026).{" "}
+            <strong>
+              ASBW: A frequency-domain analysis approach for distinguishing
+              GAN-generated images from real images
+            </strong>
+            . In Proceedings of{" "}
+            <ExternalLink
+              href="https://dcest.org/"
+              title="DCEST 2026 International Conference"
+            >
+              The Digital Convergence in Economics, Society and Technology
+              (DCEST) 2026 International Conference
+            </ExternalLink>{" "}
+            (pp. 95-105).
+          </li>
+        </ul>
       </section>
 
       {/* Projects */}
@@ -347,6 +345,16 @@ function HomePage() {
             ))}
           </ul>
         </div>
+      </section>
+
+      {/* Skills */}
+      <section id="skills" className="skills">
+        <h1>Skills</h1>
+        <ul className="skill-list">
+          {skills.map((skill) => (
+            <li key={skill}>{skill}</li>
+          ))}
+        </ul>
       </section>
 
       {/* Certification */}
@@ -379,7 +387,7 @@ const BlogPage = memo(function BlogPage() {
 // ============================================
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
-  const [updateDate, setUpdateDate] = useState("15 Feb 2026");
+  const updateDate = "26 Apr 2026";
 
   useEffect(() => {
     const handlePopState = () => {
@@ -408,8 +416,8 @@ function App() {
       <div className="page">
         <header className="topbar">
           <div>
-            <h2 className="title">AI/ML Engineer</h2>
-            <h1 className="name">Nguyen Quang Huy</h1>
+            <h2 className="title">Research Intern @ NLP & KD Lab, TDTU</h2>
+            <h1 className="name">Nguyen Quang Huy (Victor)</h1>
             <div className="contacts">
               <ExternalLink href={EXTERNAL_LINKS.linkedin} title="LinkedIn">
                 <Linkedin size={20} />

@@ -82,6 +82,7 @@ body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-muted);
+  font-size: small;
 }
 
 .name {
@@ -289,6 +290,9 @@ section {
 /* --- Lists (unified) --- */
 .competition-list,
 .certification-list,
+.skill-list,
+.contact-list,
+.publication-list,
 .feature-list {
   display: grid;
   gap: var(--spacing-sm);
@@ -303,6 +307,9 @@ section {
 
 .competition-list li,
 .certification-list li,
+.skill-list li,
+.contact-list li,
+.publication-list li,
 .feature-list li {
   margin: 0;
 }
@@ -413,6 +420,9 @@ section {
 
   .competition-list,
   .certification-list,
+  .skill-list,
+  .contact-list,
+  .publication-list,
   .feature-list {
     gap: var(--spacing-xs);
     padding-left: var(--spacing-xl);
@@ -477,12 +487,18 @@ section {
 
   .competition-list,
   .certification-list,
+  .skill-list,
+  .contact-list,
+  .publication-list,
   .feature-list {
     padding-left: var(--spacing-md);
   }
 
   .competition-list li,
   .certification-list li,
+  .skill-list li,
+  .contact-list li,
+  .publication-list li,
   .feature-list li {
     overflow-wrap: break-word;
     word-wrap: break-word;
