@@ -133,8 +133,9 @@ A real-time stock platform integrating deep learning-based forecasting, NLP-driv
 
 ## Contact
 
-* **LinkedIn**: [linkedin.com/in/nguyenquanghuy040805](https://www.linkedin.com/in/nguyenquanghuy040805/)
-* **Email**: [nqhuy.aie@gmail.com](mailto:nqhuy.aie@gmail.com) or [nguyenquanghuy.st@tdtu.edu.vn](nguyenquanghuy.st@tdtu.edu.vn)
 * **Homepage**: [https://victornguyenlpn.github.io/](https://victornguyenlpn.github.io/)
+* **Email**: [nqhuy.aie@gmail.com](mailto:nqhuy.aie@gmail.com) or [nguyenquanghuy.st@tdtu.edu.vn](nguyenquanghuy.st@tdtu.edu.vn)
+* **Github**: [VictorNguyenLPN](https://github.com/VictorNguyenLPN)
+* **LinkedIn**: [linkedin.com/in/nguyenquanghuy040805](https://www.linkedin.com/in/nguyenquanghuy040805/)
 * **ORCID**: [0009-0003-3203-0415](https://orcid.org/0009-0003-3203-0415)
 
