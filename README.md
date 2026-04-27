@@ -5,6 +5,7 @@
     Multimodal Learning | Image Forensics | AI Systems<br/>
     <a href="https://victornguyenlpn.github.io/">Homepage</a> |
     <a href="mailto:nqhuy.aie@gmail.com">Email</a> |
+    <a href="https://github.com/VictorNguyenLPN">Github</a> |
     <a href="https://www.linkedin.com/in/nguyenquanghuy040805/">LinkedIn</a> |
     <a href="https://orcid.org/0009-0003-3203-0415">ORCID</a><br/><br/>
     <em>Seeking <strong>AI Research Intern</strong> (Multimodal Learning, Computer Vision, LLMs)<br/>and <strong>AI Engineer Intern</strong> (RAG, AI Agents, LLM applications)<br/>in Ho Chi Minh City, Vietnam 🇻🇳</em>
@@ -16,6 +17,25 @@
 ## About Me
 
 I focus on **Multimodal Learning, Image Forensics, and Applied AI Systems**. My work spans from training deep learning models (CV, NLP, time-series) to building end-to-end systems for real-world applications.
+
+---
+
+## Education
+
+**Ton Duc Thang University** - B.Sc. in Computer Science (Artificial Intelligence)   
+2023 - 2027
+* Relevant Coursework: Deep Learning, Computer Vision, Natural Language Processing  
+* Awards:
+  * 3rd Prize, Student Scientific Research Competition, TDTU (2025)
+  * Encouragement Prize, Vietnam Datathon – DataStorm (2025)
+  * Top 11, NASA Space Apps Challenge – Ho Chi Minh City (2025)
+  * Encouragement Prize, Southern AI Olympiad (2025)
+
+**Thang Long High School for the Gifted** - Specialized in Chemistry  
+2020 - 2023  
+* Awards:
+  * 3rd Prize, Provincial Excellent Student Competition, Lam Dong (2021)
+  * Member, Lam Dong Provincial Team for National Excellent Student Competition (2021)
 
 ---
 
