@@ -1,22 +1,648 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nguyen Quang Huy</title>
-    <meta
-      name="description"
-      content="Nguyen Quang Huy's portfolio rendered directly from markdown and deployed on GitHub Pages."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Quang Huy (Victor) Nguyen - AI Researcher & Engineer specializing in Multimodal Learning, Image Forensics, LLMs, and Applied AI. Research Intern at NLP & KD Lab, Ton Duc Thang University." />
+  <meta name="keywords" content="AI Research, Machine Learning, Deep Learning, Multimodal Learning, Image Forensics, LLM, Computer Vision, NLP, Vietnam" />
+  <meta name="author" content="Nguyen Quang Huy" />
+  <meta property="og:title" content="Quang Huy Nguyen - AI Researcher & Engineer" />
+  <meta property="og:description" content="Research Intern at NLP & KD Lab, TDTU. Working on Multimodal Learning, Image Forensics, LLMs & Agents." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://victornguyenlpn.github.io/" />
+  <title>Quang Huy Nguyen - AI Researcher & Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-inner" role="navigation" aria-label="Main navigation">
+      <a href="#hero" class="nav-brand" aria-label="Home">
+        <span class="brand-name">Quang Huy</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#publications" class="nav-link">Publications</a></li>
+        <!-- <li><a href="#projects" class="nav-link">Projects</a></li> -->
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero" aria-label="Introduction">
+      <div class="hero-inner container">
+        <div class="hero-content reveal">
+          <h1 class="hero-name">Nguyen Quang Huy</h1>
+          <p class="hero-title">Research Intern @ NLP &amp; KD Lab, TDTU, Vietnam</p>
+          <p class="hero-bio">
+            I am an AI researcher focused on multimodal intelligence and trustworthy AI systems. My work explores synthetic image detection, multimodal multimedia understanding, large language models, embedding and retrieval techniques, RAG architectures, and autonomous AI agents.
+          </p>
+          <div class="hero-cta">
+            <a href="#publications" class="btn btn-primary">View Research</a>
+            <a href="#projects" class="btn btn-secondary">View Projects</a>
+            <a href="https://drive.google.com/uc?export=download&id=1WLBGtlIubq4Ypy9KfTJf_Y0ZS2ST9-5J" class="btn btn-ghost" target="_blank" rel="noopener">Download CV</a>
+          </div>
+          <div class="mobile-hero-note" aria-label="Mobile version notice">
+            <div class="mobile-hero-badge">Mobile version coming soon</div>
+            <h2 class="mobile-hero-name">Nguyen Quang Huy</h2>
+            <p class="mobile-hero-title">Research Intern @ NLP &amp; KD Lab, TDTU, Vietnam</p>
+            <p class="mobile-hero-text">A lightweight mobile experience is on the way. For now, you can still reach me here.</p>
+            <div class="mobile-hero-links">
+              <a href="https://github.com/VictorNguyenLPN" target="_blank" rel="noopener" aria-label="GitHub" class="mobile-hero-link">GitHub</a>
+              <a href="https://www.linkedin.com/in/nguyenquanghuy040805/" target="_blank" rel="noopener" aria-label="LinkedIn" class="mobile-hero-link">LinkedIn</a>
+              <a href="mailto:nqhuy.aie@gmail.com" class="mobile-hero-link" aria-label="Gmail">Gmail</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section about-section" id="about" aria-label="About">
+      <div class="container">
+        <div class="section-label reveal">About</div>
+        <div class="about-grid">
+          <div class="about-left reveal">
+          <h2 class="section-heading">Building AI that can see and understand</h2>
+
+          <p class="body-text">
+            I am a third-year Computer Science student at Ton Duc Thang University and a Research Intern at the NLP &amp; Knowledge Discovery Lab. My interests lie in Computer Vision, Multimodal AI, and Large Language Models, with a focus on how AI systems can better understand visual information and interact with the world.
+          </p>
+
+          <p class="body-text">
+            My current research focuses on AI-generated image detection, where I explore frequency-domain representations and contrastive learning techniques to distinguish synthetic images from real ones. I am also interested in building practical AI systems, including vision-language applications, retrieval-augmented generation (RAG), and AI agents.
+          </p>
+
+          <p class="body-text">
+            Beyond research, I enjoy turning ideas into working products and exploring new technologies. I am always looking for opportunities to learn, collaborate, and contribute to meaningful AI projects.
+          </p>
+
+          <p class="body-text">
+            I am currently seeking AI Research and AI Engineer internship opportunities in Ho Chi Minh City and hope to pursue graduate studies in Computer Vision and Multimodal AI in the future.
+          </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PUBLICATIONS ===== -->
+    <section class="section pub-section" id="publications" aria-label="Publications">
+      <div class="container">
+        <div class="section-label reveal">Publications</div>
+        <h2 class="section-heading reveal">Research output</h2>
+        <div class="pub-list">
+          <article class="pub-item reveal" aria-label="Publication: FALCON">
+            <div class="pub-meta">
+              <div class="pub-links">
+                <a href="https://github.com/VictorNguyenLPN/FALCON" target="_blank" rel="noopener" class="pub-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                  GitHub
+                </a>
+                <!-- <a href="https://ieeexplore.ieee.org/document/xxxxx"
+                  target="_blank"
+                  rel="noopener"
+                  class="pub-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                    <path d="M14 3h7v7"/>
+                    <path d="M10 14L21 3"/>
+                    <path d="M21 14v7h-7"/>
+                    <path d="M3 10V3h7"/>
+                  </svg>
+                  Paper
+                </a> -->
+                <!-- <button
+                  class="pub-link doi-copy-btn"
+                  data-doi="10.1234/falcon.2026.001">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  DOI
+                </button> -->
+                <a href="https://fitat.org/"
+                  target="_blank"
+                  rel="noopener"
+                  class="pub-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 21h18"></path>
+                    <path d="M5 21V7l7-4 7 4v14"></path>
+                    <path d="M9 9h.01"></path>
+                    <path d="M15 9h.01"></path>
+                    <path d="M9 13h.01"></path>
+                    <path d="M15 13h.01"></path>
+                  </svg>
+                  Site
+                </a>
+              </div>
+            </div>
+            <div class="pub-body">
+              <h3 class="pub-title">FALCON: Forensic-Aware Language-Guided Contrastive Learning for Generalized Synthetic Image Detection</h3>
+              <p class="pub-venue">Under review - [FITAT 2026] 18th International Conference on Frontiers of Information Technology, Applications and Tools</p>
+              <p class="pub-authors">Nguyen, Q. H., &amp; Pham, V. H. (2026)</p>
+              <p class="pub-abstract">
+                Recent advances in generative models have significantly improved the realism of synthetic images, making cross-generator synthetic image detection increasingly challenging. Existing forensic detectors often learn generator-specific artifacts and therefore suffer substantial performance degradation when evaluated on unseen architectures. In this paper, we propose FALCON (Forensic-Aware Language-guided Contrastive Learning), a language-guided forensic framework that uses forensic-aware textual supervision to learn transferable visual representations. FALCON aligns image features with textual descriptions of semantic content and forensic traces, and then refines the detector with a hybrid contrastive and classification objective. To evaluate cross-generator robustness, we construct UniRF-112K, a balanced benchmark of 112,000 real and synthetic images spanning GANs, diffusion models, transformer-based generation, and flow matching. Under a one-generator training protocol, models are trained on ProGAN and evaluated across diverse held-out generators. Experimental results show that the best FALCON variant achieves a mean Average Precision (mAP) of 83.30%, outperforming LASTED by 8% and obtaining strong gains on several challenging unseen generators, including StyleGAN3, DiT, and Flux.1. Ablation results further indicate that combining image-class context with forensic trace descriptions provides the most effective textual supervision for generalized synthetic image detection.
+              </p>
+            </div>
+          </article>
+          <article class="pub-item reveal" aria-label="Publication: ASBW">
+            <div class="pub-meta">
+              <div class="pub-links">
+                <a href="https://github.com/VictorNguyenLPN/ASBW" target="_blank" rel="noopener" class="pub-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                  GitHub
+                </a>
+                <!-- <a href="https://ieeexplore.ieee.org/document/xxxxx"
+                  target="_blank"
+                  rel="noopener"
+                  class="pub-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                    <path d="M14 3h7v7"/>
+                    <path d="M10 14L21 3"/>
+                    <path d="M21 14v7h-7"/>
+                    <path d="M3 10V3h7"/>
+                  </svg>
+                  Paper
+                </a>
+                <button
+                  class="pub-link doi-copy-btn"
+                  data-doi="10.1234/falcon.2026.001">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  DOI
+                </button> -->
+                <a href="https://www.dcest.org/"
+                  target="_blank"
+                  rel="noopener"
+                  class="pub-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 21h18"></path>
+                    <path d="M5 21V7l7-4 7 4v14"></path>
+                    <path d="M9 9h.01"></path>
+                    <path d="M15 9h.01"></path>
+                    <path d="M9 13h.01"></path>
+                    <path d="M15 13h.01"></path>
+                  </svg>
+                  Site
+                </a>                
+              </div>
+            </div>
+            <div class="pub-body">
+              <h3 class="pub-title">ASBW: A Frequency-Domain Analysis Approach for Distinguishing GAN-Generated Images from Real Images</h3>
+              <p class="pub-venue">[DCEST 2026] International Conference on Digital Convergence in Economics, Society and Technology, pp. 95-105</p>
+              <p class="pub-authors">Nguyen, Q. H., &amp; Pham, V. H. (2026)</p>
+              <p class="pub-abstract">
+                The rapid advancement of Generative Adversarial Networks (GANs) continues to challenge digital media integrity, while purely spatial-domain forensic models remain sensitive to overfitting and weakly generalizable artifacts. To address this, we propose the Adaptive Spectral-Band Weighting (ASBW) layer, a lightweight frequency-domain module that applies the Discrete Fourier Transform (DFT) and a compact Multi-Layer Perceptron (MLP) to reweight discriminative spectral cues caused by GAN generation. We evaluate ASBW insertion at different positions across the ResNet-18 pipeline (after each convolutional block), and compare these placement strategies with the baseline CNN. Results on the real/fake face benchmark show that ASBW effectiveness is strongly position-dependent: the full configuration achieves the best performance (93.12%), while placing ASBW after later blocks (e.g., Position 3: 92.22%) consistently improves over the baseline (89.77%). These findings highlight that frequency-aware amplification is most beneficial when integrated with suitable feature hierarchy depth, and provide practical guidance for architecture design in GAN image forensics.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <!-- <section class="section projects-section" id="projects" aria-label="Projects">
+      <div class="container">
+        <div class="section-label reveal">Projects</div>
+        <h2 class="section-heading reveal">Featured work</h2>
+
+        <div class="projects-grid">
+          <article class="project-card reveal" aria-label="Project: ViFoodVQA">
+            <div class="project-header">
+              <div class="project-number mono">01</div>
+              <div class="project-links-top">
+                <a href="https://github.com/VictorNguyenLPN/ViFoodVQA" target="_blank" rel="noopener" aria-label="ViFoodVQA on GitHub" class="project-icon-link">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">ViFoodVQA</h3>
+            <p class="project-desc">
+              A Vietnamese food Visual Question Answering benchmark comprising 2,326 food images and 23,260 QA
+              pairs. Demonstrates how efficient domain adaptation via QLoRA dramatically lifts multimodal
+              model performance in low-resource settings.
+            </p>
+            <div class="project-results">
+              <div class="result-stat">
+                <span class="result-val">+24.39</span>
+                <span class="result-label">avg. score (24→48)</span>
+              </div>
+              <div class="result-stat">
+                <span class="result-val">+28.3</span>
+                <span class="result-label">BLEU gain</span>
+              </div>
+              <div class="result-stat">
+                <span class="result-val">+49.1</span>
+                <span class="result-label">LLM-Judge gain</span>
+              </div>
+            </div>
+            <div class="project-stack">
+              <span class="stack-tag">PyTorch</span>
+              <span class="stack-tag">Qwen-VL</span>
+              <span class="stack-tag">QLoRA</span>
+              <span class="stack-tag">Hugging Face</span>
+              <span class="stack-tag">PhoBERT</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal reveal-delay-1" aria-label="Project: DataStorm">
+            <div class="project-header">
+              <div class="project-number mono">02</div>
+              <div class="project-award">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                Encouragement Prize · Vietnam Datathon 2025
+              </div>
+              <a href="https://github.com/DomTechnology/datastorm" target="_blank" rel="noopener" aria-label="DataStorm on GitHub" class="project-icon-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+            <h3 class="project-title">DataStorm</h3>
+            <p class="project-desc">
+              End-to-end retail analytics platform delivering 7-day SKU-level demand forecasting for FMCG.
+              Combines XGBoost models with engineered temporal features and FastAPI-served dashboards for
+              inventory planning and stock alerting.
+            </p>
+            <div class="project-results">
+              <div class="result-stat">
+                <span class="result-val">−5%</span>
+                <span class="result-label">MAPE vs baseline</span>
+              </div>
+              <div class="result-stat">
+                <span class="result-val">7-day</span>
+                <span class="result-label">forecast horizon</span>
+              </div>
+            </div>
+            <div class="project-stack">
+              <span class="stack-tag">XGBoost</span>
+              <span class="stack-tag">LSTM</span>
+              <span class="stack-tag">FastAPI</span>
+              <span class="stack-tag">PostgreSQL</span>
+              <span class="stack-tag">React</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal reveal-delay-2" aria-label="Project: AirForce">
+            <div class="project-header">
+              <div class="project-number mono">03</div>
+              <div class="project-award">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                Top 11 · NASA Space Apps Challenge 2025 - HCMC
+              </div>
+              <a href="https://github.com/DanielNguyen-05/AirForce" target="_blank" rel="noopener" aria-label="AirForce on GitHub" class="project-icon-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </a>
+            </div>
+            <h3 class="project-title">AirForce</h3>
+            <p class="project-desc">
+              Air quality monitoring platform fusing satellite data with ground-station measurements for
+              real-time AQI tracking and 7-day forecasting. LSTM models trained on aligned environmental
+              time-series support early risk awareness for public health applications.
+            </p>
+            <div class="project-results">
+              <div class="result-stat">
+                <span class="result-val">1.12</span>
+                <span class="result-label">MAE</span>
+              </div>
+              <div class="result-stat">
+                <span class="result-val">3.0</span>
+                <span class="result-label">RMSE</span>
+              </div>
+              <div class="result-stat">
+                <span class="result-val">Top 11</span>
+                <span class="result-label">NASA Space Apps</span>
+              </div>
+            </div>
+            <div class="project-stack">
+              <span class="stack-tag">LSTM</span>
+              <span class="stack-tag">PyTorch</span>
+              <span class="stack-tag">FastAPI</span>
+              <span class="stack-tag">PostgreSQL</span>
+              <span class="stack-tag">React</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ===== SKILLS ===== -->
+    <!-- <section class="section skills-section" id="skills" aria-label="Technical skills">
+      <div class="container">
+        <div class="section-label reveal">Skills</div>
+        <h2 class="section-heading reveal">Technical toolkit</h2>
+
+        <div class="skills-grid">
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">AI &amp; Machine Learning</h3>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">PyTorch</li>
+              <li class="skill-item">Hugging Face Transformers</li>
+              <li class="skill-item">Scikit-learn</li>
+              <li class="skill-item">QLoRA / PEFT</li>
+              <li class="skill-item">XGBoost</li>
+              <li class="skill-item">LSTM</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal reveal-delay-1">
+            <h3 class="skill-group-title">Programming</h3>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">Python</li>
+              <li class="skill-item">JavaScript</li>
+              <li class="skill-item">SQL</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal reveal-delay-2">
+            <h3 class="skill-group-title">Data &amp; ETL</h3>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">Pandas</li>
+              <li class="skill-item">NumPy</li>
+              <li class="skill-item">Matplotlib</li>
+              <li class="skill-item">Seaborn</li>
+              <li class="skill-item">Plotly</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group-title">APIs &amp; Backend</h3>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">FastAPI</li>
+              <li class="skill-item">Flask</li>
+              <li class="skill-item">ExpressJS</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal reveal-delay-1">
+            <h3 class="skill-group-title">Data Stores</h3>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">MySQL</li>
+              <li class="skill-item">MongoDB</li>
+              <li class="skill-item">PostgreSQL</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal reveal-delay-2">
+            <h3 class="skill-group-title">Frontend</h3>
+            <ul class="skill-list" role="list">
+              <li class="skill-item">React</li>
+              <li class="skill-item">Next.js</li>
+              <li class="skill-item">TailwindCSS</li>
+              <li class="skill-item">HTML / CSS / JS</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="section experience-section" id="experience" aria-label="Experience">
+      <div class="container">
+        <div class="section-label reveal">Experience &amp; Education</div>
+        <h2 class="section-heading reveal">Academic &amp; research timeline</h2>
+
+        <div class="timeline">
+
+          <div class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">Jun 2026 - Present</div>
+              <h3 class="timeline-role">Research Intern</h3>
+              <div class="timeline-org">
+                <a href="https://it.tdtu.edu.vn/nlplab" target="_blank" rel="noopener">NLP &amp; Knowledge Discovery Lab · Ton Duc Thang University</a>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Fine-tune pretrained LLMs and adapt multimodal models for domain-specific tasks.</li>
+                <li>Curate, preprocess, and annotate datasets to support experiments and benchmarks.</li>
+                <li>Develop retrieval-augmented systems and prototype LLM-based applications.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">Sep 2023 - Present</div>
+              <h3 class="timeline-role">B.Sc. Computer Science</h3>
+              <div class="timeline-org">
+                <a href="https://tdtu.edu.vn/en" target="_blank" rel="noopener">Ton Duc Thang University · Ho Chi Minh City</a>
+              </div>
+              <ul class="timeline-bullets">
+                <li>
+                  AI & Machine Learning:
+                  Introduction to AI, Machine Learning.
+                </li>
+
+                <li>
+                 Deep Learning & Multimodal AI:
+                  Deep Learning, Natural Language Processing, Computer Vision.
+                </li>
+
+                <li>
+                 Data Science & Knowledge Discovery:
+                  Knowledge Discovery and Data Mining, Mining Massive Datasets.
+                </li>
+
+                <li>
+                 Research & Industry Training:
+                  Industrial Experience Project, Graduation Internship, Graduation Thesis.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">Sep 2020 - May 2023</div>
+              <h3 class="timeline-role">High School Diploma</h3>
+              <div class="timeline-org">
+                <a href="https://chuyenthanglongdalat.edu.vn/" target="_blank" rel="noopener">Thang Long High School for the Gifted · Da Lat City</a>
+              </div>
+              <ul class="timeline-bullets">
+                <li>3rd Prize, Provincial Excellent Student Competition, Lam Dong</li>
+                <li>Member, Lam Dong Provincial Team for National Excellent Student Competition</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ACHIEVEMENTS ===== -->
+    <!-- <section class="section achievements-section" id="achievements" aria-label="Achievements">
+      <div class="container">
+        <div class="section-label reveal">Achievements</div>
+        <h2 class="section-heading reveal">Awards &amp; recognition</h2>
+
+        <div class="achievements-grid">
+          <div class="achievement-card reveal">
+            <div class="achievement-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+            </div>
+            <div class="achievement-body">
+              <h3 class="achievement-title">Top 11 - NASA Space Apps Challenge 2025</h3>
+              <p class="achievement-sub">Ho Chi Minh City · Global hackathon hosted by NASA</p>
+              <p class="achievement-desc">AirForce: satellite-fused AQI forecasting platform placing in the top 11 teams citywide.</p>
+            </div>
+          </div>
+
+          <div class="achievement-card reveal reveal-delay-1">
+            <div class="achievement-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <div class="achievement-body">
+              <h3 class="achievement-title">Encouragement Prize - Vietnam Datathon 2025</h3>
+              <p class="achievement-sub">Datastorm Competition · Retail Analytics Track</p>
+              <p class="achievement-desc">DataStorm: end-to-end FMCG demand forecasting platform achieving 5% MAPE improvement over baseline.</p>
+            </div>
+          </div>
+
+          <div class="achievement-card reveal reveal-delay-2">
+            <div class="achievement-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
+            </div>
+            <div class="achievement-body">
+              <h3 class="achievement-title">DCEST 2026 - Published Paper</h3>
+              <p class="achievement-sub">International Conference · Pages 95-105</p>
+              <p class="achievement-desc">ASBW: frequency-domain forensic analysis accepted and published at an international AI conference.</p>
+            </div>
+          </div>
+
+          <div class="achievement-card reveal">
+            <div class="achievement-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div class="achievement-body">
+              <h3 class="achievement-title">TOEIC 845 &amp; Speaking/Writing 270</h3>
+              <p class="achievement-sub">English Language Proficiency · ETS</p>
+              <p class="achievement-desc">Strong academic English enabling engagement with international research literature and collaboration.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section contact-section" id="contact" aria-label="Contact">
+      <div class="container">
+        <div class="section-label reveal">Contact</div>
+        <h2 class="section-heading reveal">Let's connect</h2>
+        <p class="contact-sub reveal">
+          I'm currently open to AI Research and AI Engineer intern positions in Ho Chi Minh City.
+          If you're working on multimodal AI, image forensics, or LLM, RAG, Agent applications - I'd like to hear from you.
+        </p>
+
+        <div class="contact-grid">
+          <a href="mailto:nqhuy.aie@gmail.com" class="contact-card reveal" aria-label="Email">
+            <div class="contact-card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div class="contact-card-body">
+              <div class="contact-card-label">Email</div>
+              <div class="contact-card-value">nqhuy.aie@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="https://github.com/VictorNguyenLPN" target="_blank" rel="noopener" class="contact-card reveal reveal-delay-1" aria-label="GitHub">
+            <div class="contact-card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </div>
+            <div class="contact-card-body">
+              <div class="contact-card-label">GitHub</div>
+              <div class="contact-card-value">VictorNguyenLPN</div>
+            </div>
+          </a>
+
+          <a href="https://drive.google.com/uc?export=download&id=1WLBGtlIubq4Ypy9KfTJf_Y0ZS2ST9-5J" target="_blank" rel="noopener" class="contact-card reveal reveal-delay-1" aria-label="Homepage">
+            <div class="contact-card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="contact-card-body">
+              <div class="contact-card-label">CV</div>
+              <div class="contact-card-value">Download my CV</div>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/nguyenquanghuy040805/" target="_blank" rel="noopener" class="contact-card reveal reveal-delay-2" aria-label="LinkedIn">
+            <div class="contact-card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div class="contact-card-body">
+              <div class="contact-card-label">LinkedIn</div>
+              <div class="contact-card-value">nguyenquanghuy040805</div>
+            </div>
+          </a>
+
+          <a href="https://orcid.org/0009-0003-3203-0415" target="_blank" rel="noopener" class="contact-card reveal" aria-label="ORCID">
+            <div class="contact-card-icon orcid-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c2.359 0 3.925-1.822 3.925-3.722 0-2.016-1.425-3.722-3.925-3.722h-2.297z"/></svg>
+            </div>
+            <div class="contact-card-body">
+              <div class="contact-card-label">ORCID</div>
+              <div class="contact-card-value">0009-0003-3203-0415</div>
+            </div>
+          </a>
+          <a href="https://scholar.google.com/citations?user=YOUR_ID"
+            target="_blank"
+            rel="noopener"
+            class="contact-card reveal"
+            aria-label="Google Scholar">
+            <div class="contact-card-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3L1 9l11 6 11-6-11-6zm0 8.8L4.2 9 12 5.2 19.8 9 12 11.8z"/>
+                <path d="M6 13v4c0 1.7 2.7 3 6 3s6-1.3 6-3v-4l-6 3-6-3z"/>
+              </svg>
+            </div>
+
+            <div class="contact-card-body">
+              <div class="contact-card-label">Google Scholar</div>
+              <div class="contact-card-value">Quang Huy Nguyen</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; 2026 Nguyen Quang Huy. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://github.com/VictorNguyenLPN" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/in/nguyenquanghuy040805/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+        <a href="https://orcid.org/0009-0003-3203-0415" target="_blank" rel="noopener" aria-label="ORCID">ORCID</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
