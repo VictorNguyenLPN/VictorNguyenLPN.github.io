@@ -195,15 +195,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ── SECTION SHARED ───────────────────────────────────────── */
 .section {
   min-height: 100vh;
-  padding: var(--space-12) 0;
+  padding: var(--space-24) 0;
 }
 
 .section.contact-section {
   min-height: 0;
-}
-
-.section.about-section {
-  padding: var(--space-24) 0;
 }
 
 .section:nth-child(even) {
@@ -247,7 +243,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   box-shadow: 0 1px 2px rgba(79,70,229,.25);
 }
 .btn-primary:hover {
-  background: #4338CA;
+  background: #fd4d9c;
   box-shadow: 0 4px 12px rgba(79,70,229,.35);
   transform: translateY(-1px);
 }
@@ -267,6 +263,22 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 0.625rem 0.75rem;
 }
 .btn-ghost:hover { color: var(--text-dark); }
+
+.grid-btn {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.nav-btn-group {
+  margin-top: var(--space-12);
+}
+
+.grid-btn .btn {
+  width: 100%;
+  justify-content: center;
+}
 
 /* ── HERO ─────────────────────────────────────────────────── */
 .hero {
@@ -698,6 +710,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   line-height: 1.7;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1227,6 +1240,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .mobile-hero-note { display: block; }
 
   .timeline { padding-left: var(--space-6); }
+  .grid-btn {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
