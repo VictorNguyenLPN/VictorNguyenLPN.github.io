@@ -569,6 +569,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .avatar {
+  width: 210px;
+  height: 270px;
+  object-fit: cover;
   border-radius: var(--radius-lg);
 }
 
