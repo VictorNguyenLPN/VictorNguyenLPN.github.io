@@ -780,7 +780,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /*  PROJECTS ─ */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-6);
 }
 
@@ -883,9 +883,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: var(--space-2);
 }
 .stack-tag {
-  font-size: 11px;
+  font-size: 15px;
   font-family: var(--font-mono);
-  color: var(--text-muted);
+  color: var(--text-dark);
   background: var(--bg-soft);
   border: 1px solid var(--border);
   padding: 2px 8px;
