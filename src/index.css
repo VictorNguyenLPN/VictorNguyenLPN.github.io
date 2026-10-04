@@ -740,18 +740,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .pub-link.copied,
 .pub-link.copied:hover,
 .doi-copy-btn.copied,
-.doi-copy-btn.copied:hover,
-.bibtex-copy-btn.copied,
-.bibtex-copy-btn.copied:hover {
+.doi-copy-btn.copied:hover {
   color: #059669 !important;
   border-color: #059669 !important;
   background: rgba(5, 150, 105, 0.08) !important;
-}
-
-.bibtex-copy-btn.is-active {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: rgba(255, 133, 187, 0.08);
 }
 
 /* BibTeX Collapsible Drawer */

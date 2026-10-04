@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import { useClipboard } from '../hooks/useClipboard';
-import { GlobeCode, Copy, Check, ChevronDown } from 'lucide-react';
+import { GlobeCode, Copy, ChevronDown } from 'lucide-react';
 import { GithubIcon } from './common/Icons';
+
+const VILEGALREB_BIBTEX = `@inproceedings{nguyen2027vilegalreb,
+  title     = {ViLegalREB: Vietnamese Legal Retrieval Embedding Benchmark},
+  author    = {Nguyen, Quang Huy and Phan, Tri Hieu and Le, Dong Duong and Duong, Trong-Chi and Le, Anh-Cuong},
+  booktitle = {Proceedings of the 19th Asian Conference on Intelligent Information and Database Systems (ACIIDS 2027)},
+  year      = {2027},
+  note      = {Under review}
+}`;
 
 const FALCON_BIBTEX = `@misc{nguyen2026falcon,
   title  = {FALCON: Forensic-Aware Language-guided Contrastive Learning for Generalized Synthetic Image Detection},
@@ -18,7 +26,7 @@ const ASBW_BIBTEX = `@inproceedings{nguyen2026asbw,
 }`;
 
 export const Publications: React.FC = () => {
-  const { copy, copiedId } = useClipboard();
+  const { copy } = useClipboard();
   const [expandedPubs, setExpandedPubs] = useState<Record<string, boolean>>({});
   const [openBibtex, setOpenBibtex] = useState<Record<string, boolean>>({});
 
@@ -30,7 +38,7 @@ export const Publications: React.FC = () => {
   };
 
   const toggleBibtex = (id: string, bibtexText: string) => {
-    copy(bibtexText, id);
+    copy(bibtexText);
     setOpenBibtex((prev) => ({
       ...prev,
       [id]: !prev[id],
@@ -44,6 +52,91 @@ export const Publications: React.FC = () => {
         <h2 className="section-heading reveal">Research output</h2>
 
         <div className="pub-list">
+          {/* ViLegalREB */}
+          <article className="pub-item reveal" aria-label="Publication: ViLegalREB">
+            <div className="pub-body">
+              <div className="pub-title-row">
+                <h3
+                  className="pub-title"
+                  onClick={() => togglePub('vilegalreb')}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={Boolean(expandedPubs['vilegalreb'])}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      togglePub('vilegalreb');
+                    }
+                  }}
+                >
+                  ViLegalREB: Vietnamese Legal Retrieval Embedding Benchmark
+                </h3>
+              </div>
+
+              <p className="pub-venue">
+                Under review - [ACIIDS 2027] 19th Asian Conference on Intelligent Information and Database Systems <strong>(CORE Rank B, Scopus Indexed)</strong>
+              </p>
+
+              <div
+                id="pub-details-vilegalreb"
+                className={`pub-details-wrapper ${expandedPubs['vilegalreb'] ? 'is-open' : ''}`}
+              >
+                <div className="pub-details-inner">
+                  <p className="pub-authors">
+                    Nguyen, Q. H., Phan, T. H., Le, D. D., Duong, T.-C., &amp; Le, A.-C.
+                  </p>
+
+                  <div className="pub-links">
+                    <a
+                      href="https://aciids.pwr.edu.pl/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="pub-link"
+                      title="ACIIDS Conference Website"
+                    >
+                      <GlobeCode size={14} />
+                      Site
+                    </a>
+
+                    <button
+                      type="button"
+                      className="pub-link bibtex-copy-btn"
+                      title="BibTeX"
+                      aria-label="Toggle BibTeX citation"
+                      aria-expanded={Boolean(openBibtex['vilegalreb'])}
+                      onClick={() => toggleBibtex('vilegalreb', VILEGALREB_BIBTEX)}
+                    >
+                      <Copy size={14} />
+                      <span>BibTeX</span>
+                      <ChevronDown
+                        size={12}
+                        className={`collapse-chevron ${openBibtex['vilegalreb'] ? 'is-rotated' : ''}`}
+                      />
+                    </button>
+                  </div>
+
+                  <div className={`bibtex-drawer ${openBibtex['vilegalreb'] ? 'is-open' : ''}`}>
+                    <div className="bibtex-inner">
+                      <div className="bibtex-box">
+                        <div className="bibtex-bar">
+                          <span className="bibtex-bar-label">BibTeX</span>
+                          <button
+                            type="button"
+                            className="bibtex-close-btn"
+                            onClick={() => setOpenBibtex((prev) => ({ ...prev, vilegalreb: false }))}
+                            aria-label="Close BibTeX preview"
+                          >
+                            ✕
+                          </button>
+                        </div>
+                        <pre className="bibtex-code"><code>{VILEGALREB_BIBTEX}</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
           {/* FALCON */}
           <article className="pub-item reveal" aria-label="Publication: FALCON">
             <div className="pub-body">
@@ -102,14 +195,14 @@ export const Publications: React.FC = () => {
 
                     <button
                       type="button"
-                      className={`pub-link bibtex-copy-btn ${copiedId === 'falcon' ? 'copied' : ''} ${openBibtex['falcon'] ? 'is-active' : ''}`}
-                      title="Copy & View BibTeX"
-                      aria-label="Copy and toggle BibTeX citation"
+                      className="pub-link bibtex-copy-btn"
+                      title="BibTeX"
+                      aria-label="Toggle BibTeX citation"
                       aria-expanded={Boolean(openBibtex['falcon'])}
                       onClick={() => toggleBibtex('falcon', FALCON_BIBTEX)}
                     >
-                      {copiedId === 'falcon' ? <Check size={14} /> : <Copy size={14} />}
-                      <span>{copiedId === 'falcon' ? 'Copied!' : (openBibtex['falcon'] ? 'Hide BibTeX' : 'BibTeX')}</span>
+                      <Copy size={14} />
+                      <span>BibTeX</span>
                       <ChevronDown
                         size={12}
                         className={`collapse-chevron ${openBibtex['falcon'] ? 'is-rotated' : ''}`}
@@ -121,7 +214,7 @@ export const Publications: React.FC = () => {
                     <div className="bibtex-inner">
                       <div className="bibtex-box">
                         <div className="bibtex-bar">
-                          <span className="bibtex-bar-label">BibTeX (Copied to clipboard)</span>
+                          <span className="bibtex-bar-label">BibTeX</span>
                           <button
                             type="button"
                             className="bibtex-close-btn"
@@ -198,14 +291,14 @@ export const Publications: React.FC = () => {
 
                     <button
                       type="button"
-                      className={`pub-link bibtex-copy-btn ${copiedId === 'asbw' ? 'copied' : ''} ${openBibtex['asbw'] ? 'is-active' : ''}`}
-                      title="Copy & View BibTeX"
-                      aria-label="Copy and toggle BibTeX citation"
+                      className="pub-link bibtex-copy-btn"
+                      title="BibTeX"
+                      aria-label="Toggle BibTeX citation"
                       aria-expanded={Boolean(openBibtex['asbw'])}
                       onClick={() => toggleBibtex('asbw', ASBW_BIBTEX)}
                     >
-                      {copiedId === 'asbw' ? <Check size={14} /> : <Copy size={14} />}
-                      <span>{copiedId === 'asbw' ? 'Copied!' : (openBibtex['asbw'] ? 'Hide BibTeX' : 'BibTeX')}</span>
+                      <Copy size={14} />
+                      <span>BibTeX</span>
                       <ChevronDown
                         size={12}
                         className={`collapse-chevron ${openBibtex['asbw'] ? 'is-rotated' : ''}`}
@@ -217,7 +310,7 @@ export const Publications: React.FC = () => {
                     <div className="bibtex-inner">
                       <div className="bibtex-box">
                         <div className="bibtex-bar">
-                          <span className="bibtex-bar-label">BibTeX (Copied to clipboard)</span>
+                          <span className="bibtex-bar-label">BibTeX</span>
                           <button
                             type="button"
                             className="bibtex-close-btn"
