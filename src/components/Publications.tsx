@@ -48,8 +48,7 @@ export const Publications: React.FC = () => {
   return (
     <section className="section pub-section" id="publications" aria-label="Publications">
       <div className="container">
-        <div className="section-label reveal">Publications</div>
-        <h2 className="section-heading reveal">Research output</h2>
+        <h2 className="section-heading reveal">Publications</h2>
 
         <div className="pub-list">
           {/* ViLegalREB */}

@@ -226,7 +226,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .section-heading {
   font-size: var(--text-3xl);
   font-weight: 700;
-  color: var(--text-dark);
+  color: var(--accent);
   letter-spacing: -0.03em;
   line-height: 1.2;
   margin-bottom: var(--space-12);
@@ -682,10 +682,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .pub-venue {
   font-size: var(--text-sm);
-  color: var(--accent);
+  color: var(--text-muted);
   font-weight: 500;
   line-height: 1.5;
-  margin-top: 4px;
+  margin-top: 8px;
 }
 .pub-authors {
   font-weight: 500;
@@ -914,7 +914,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--space-1.5);
+  gap: var(--space-2);
 }
 
 .project-bullets li {
@@ -1166,7 +1166,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .timeline-org {
   font-size: var(--text-sm);
-  color: var(--accent);
+  color: var(--text-muted);
   font-weight: 500;
   margin-bottom: var(--space-3);
 }
@@ -1422,7 +1422,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   }
 
   .section-heading {
-    font-size: var(--text-2xl);
+    font-size: 1.65rem;
     margin-bottom: var(--space-8);
   }
 
@@ -1558,7 +1558,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hero-title {
     text-align: center;
     width: 100%;
-    font-size: var(--text-base);
+    font-size: var(--text-lg);
     margin-bottom: var(--space-4);
   }
 
@@ -1581,8 +1581,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
   .hero-bio-paragraphs .body-text,
   .hero-bio-paragraph {
-    font-size: 0.9375rem;
-    line-height: 1.65;
+    font-size: var(--text-base);
+    line-height: 1.7;
     margin-bottom: 0;
     margin-top: 0;
   }
@@ -1590,7 +1590,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .hero-contact-info {
     display: none;
     width: 100%;
-    font-size: var(--text-sm);
+    font-size: 0.9375rem;
     gap: var(--space-2);
     margin: 0;
   }
@@ -1619,7 +1619,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     outline: none;
     box-shadow: none;
     padding: 0;
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
     font-family: var(--font-mono);
     font-weight: 600;
     color: var(--accent);
@@ -1687,17 +1687,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   }
 
   .pub-title {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     line-height: 1.35;
   }
 
   .pub-venue {
-    font-size: var(--text-xs);
-    margin-top: 2px;
+    font-size: var(--text-sm);
+    margin-top: 4px;
   }
 
   .pub-authors {
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
     word-break: break-word;
   }
 
@@ -1707,9 +1707,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   }
 
   .pub-link {
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
     padding: 6px 12px;
     min-height: 36px;
+  }
+
+  .pub-badge,
+  .project-badge {
+    font-size: 12px;
   }
 
   /* Projects Mobile */
@@ -1735,7 +1740,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   }
 
   .project-title {
-    font-size: 1.15rem;
+    font-size: var(--text-xl);
     width: 100%;
   }
 
@@ -1748,22 +1753,22 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   }
 
   .project-desc {
-    font-size: var(--text-sm);
-    line-height: 1.55;
-  }
-
-  .project-bullets li {
-    font-size: var(--text-xs);
+    font-size: var(--text-base);
     line-height: 1.6;
   }
 
+  .project-bullets li {
+    font-size: var(--text-sm);
+    line-height: 1.65;
+  }
+
   .project-tech {
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
     word-break: break-word;
   }
 
   .project-award {
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
   }
 
   /* Experience / Timeline Mobile */
@@ -1783,22 +1788,26 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     align-items: flex-start;
   }
 
+  .timeline-date {
+    font-size: var(--text-sm);
+  }
+
   .timeline-role {
-    font-size: var(--text-lg);
+    font-size: var(--text-xl);
   }
 
   .timeline-org {
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
     margin-bottom: var(--space-2);
   }
 
   .timeline-bullets li {
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
   }
 
   /* Contact Mobile */
   .contact-sub {
-    font-size: var(--text-base);
+    font-size: var(--text-lg);
     margin-bottom: var(--space-6);
   }
 
@@ -1847,7 +1856,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   }
 
   .hero-name {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
   }
 
   .section {
@@ -1855,7 +1864,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   }
 
   .section-heading {
-    font-size: 1.4rem;
+    font-size: 1.55rem;
     margin-bottom: var(--space-6);
   }
 

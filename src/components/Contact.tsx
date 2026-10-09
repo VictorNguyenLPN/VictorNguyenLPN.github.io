@@ -11,7 +11,6 @@ export const Contact: React.FC = () => {
   return (
     <section className="section contact-section" id="contact" aria-label="Contact">
       <div className="container">
-        <div className="section-label reveal">Contact</div>
         <h2 className="section-heading reveal">Let&apos;s connect</h2>
         <p className="contact-sub reveal">
           I&apos;m currently open to AI Research and AI Engineer opportunities in Ho Chi

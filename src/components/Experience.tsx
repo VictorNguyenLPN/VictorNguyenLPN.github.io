@@ -13,8 +13,7 @@ export const Experience: React.FC = () => {
   return (
     <section className="section experience-section" id="experience" aria-label="Experience">
       <div className="container">
-        <div className="section-label reveal">Experience &amp; Education</div>
-        <h2 className="section-heading reveal">Academic &amp; research timeline</h2>
+        <h2 className="section-heading reveal">Experience &amp; Education</h2>
 
         <div className="timeline">
           {/* Research Intern */}

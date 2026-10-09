@@ -15,7 +15,6 @@ export const Projects: React.FC = () => {
   return (
     <section className="section projects-section" id="projects" aria-label="Projects">
       <div className="container">
-        <div className="section-label reveal">Projects</div>
         <h2 className="section-heading reveal">Selected Projects</h2>
 
         <div className="projects-list">
