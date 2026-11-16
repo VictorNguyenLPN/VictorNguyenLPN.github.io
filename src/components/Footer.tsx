@@ -1,4 +1,5 @@
 import React from 'react';
+import { PROFILE_LINKS } from '../data/portfolio';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -10,28 +11,14 @@ export const Footer: React.FC = () => {
           &copy; {currentYear} Nguyen Quang Huy. All rights reserved.
         </p>
         <div className="footer-links">
-          <a
-            href="https://github.com/VictorNguyenLPN"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
+          <a href={`mailto:${PROFILE_LINKS.personalEmail}`}>Email</a>
+          <a href={PROFILE_LINKS.github} target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
-          <a
-            href="https://www.linkedin.com/in/nguyenquanghuy040805/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
+          <a href={PROFILE_LINKS.linkedin} target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
-          <a
-            href="https://orcid.org/0009-0003-3203-0415"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="ORCID"
-          >
+          <a href={PROFILE_LINKS.orcid} target="_blank" rel="noopener noreferrer">
             ORCID
           </a>
         </div>

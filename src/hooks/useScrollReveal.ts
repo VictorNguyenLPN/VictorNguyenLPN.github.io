@@ -2,18 +2,12 @@ import { useEffect } from 'react';
 
 export function useScrollReveal() {
   useEffect(() => {
-    // If reduced motion is requested, immediately make all visible
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.querySelectorAll('.reveal').forEach((el) => {
-        el.classList.add('is-visible');
-      });
-      return;
-    }
+    const targets = document.querySelectorAll('.reveal:not(.is-visible)');
+    if (targets.length === 0) return;
 
-    if (!('IntersectionObserver' in window)) {
-      document.querySelectorAll('.reveal').forEach((el) => {
-        el.classList.add('is-visible');
-      });
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      targets.forEach((el) => el.classList.add('is-visible'));
       return;
     }
 
@@ -26,14 +20,11 @@ export function useScrollReveal() {
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.01, rootMargin: '0px 0px -16px 0px' }
     );
 
-    const elements = document.querySelectorAll('.reveal:not(.is-visible)');
-    elements.forEach((el) => observer.observe(el));
+    targets.forEach((el) => observer.observe(el));
 
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 }

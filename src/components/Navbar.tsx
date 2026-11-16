@@ -1,23 +1,27 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { CV_URL } from '../data/portfolio';
 
 interface NavbarProps {
   activeSection: string;
   isScrolled: boolean;
-  isSolid: boolean;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ activeSection, isScrolled, isSolid }) => {
+const NAV_ITEMS = [
+  { id: 'about', label: 'About' },
+  { id: 'publications', label: 'Publications' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
+  { id: 'moments', label: 'Moments' },
+  { id: 'contact', label: 'Contact' },
+] as const;
+
+export const Navbar: React.FC<NavbarProps> = ({ activeSection, isScrolled }) => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
-  const toggleMobileMenu = () => {
-    setIsMobileOpen((prev) => !prev);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileOpen(false);
-  };
+  const toggleMobileMenu = () => setIsMobileOpen((prev) => !prev);
+  const closeMobileMenu = () => setIsMobileOpen(false);
 
   useEffect(() => {
     document.body.style.overflow = isMobileOpen ? 'hidden' : '';
@@ -53,122 +57,90 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, isScrolled, isSol
     };
   }, [isMobileOpen]);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isExternal?: boolean) => {
-    if (isExternal) return;
-
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      closeMobileMenu();
-      const targetId = href.slice(1);
-      const target = document.getElementById(targetId);
-      if (target && headerRef.current) {
-        const navH = headerRef.current.offsetHeight;
-        const top = target.getBoundingClientRect().top + window.scrollY - navH;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    closeMobileMenu();
+    const target = document.getElementById(targetId);
+    if (target) {
+      const navHeight = headerRef.current ? headerRef.current.offsetHeight : 64;
+      const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
     }
   };
 
-  const headerClasses = [
-    'site-header',
-    isSolid ? 'is-solid' : '',
-    isScrolled ? 'scrolled' : '',
-  ]
-    .filter(Boolean)
-    .join(' ');
-
   return (
-    <header className={headerClasses} id="site-header" ref={headerRef}>
-      <nav className="nav-inner" role="navigation" aria-label="Main navigation">
-        <a
-          href="#about"
-          className="nav-brand"
-          aria-label="Home"
-          onClick={(e) => handleNavClick(e, '#about')}
-        >
-          <span className="brand-name">Quang Huy</span>
-        </a>
+    <>
+      <header
+        className={`site-header ${isScrolled ? 'scrolled' : ''}`}
+        id="site-header"
+        ref={headerRef}
+      >
+        <nav className="nav-inner" aria-label="Main navigation">
+          <a
+            href="#about"
+            className="nav-brand"
+            aria-label="Quang Huy - Back to top"
+            onClick={(e) => handleNavClick(e, 'about')}
+          >
+            <span className="brand-name">Quang Huy</span>
+          </a>
 
-        <button
-          ref={toggleRef}
-          className="nav-toggle"
-          id="nav-toggle"
-          aria-label="Toggle navigation"
-          aria-expanded={isMobileOpen}
-          onClick={toggleMobileMenu}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+          <button
+            ref={toggleRef}
+            type="button"
+            className="nav-toggle"
+            id="nav-toggle"
+            aria-label={isMobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isMobileOpen}
+            aria-controls="nav-links"
+            onClick={toggleMobileMenu}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
 
-        <ul
-          className={`nav-links ${isMobileOpen ? 'is-open' : ''}`}
-          id="nav-links"
-          role="list"
-        >
-          <li>
-            <a
-              href="#about"
-              className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
-              onClick={(e) => handleNavClick(e, '#about')}
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              href="#publications"
-              className={`nav-link ${activeSection === 'publications' ? 'active' : ''}`}
-              onClick={(e) => handleNavClick(e, '#publications')}
-            >
-              Publications
-            </a>
-          </li>
-          <li>
-            <a
-              href="#projects"
-              className={`nav-link ${activeSection === 'projects' ? 'active' : ''}`}
-              onClick={(e) => handleNavClick(e, '#projects')}
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a
-              href="#experience"
-              className={`nav-link ${activeSection === 'experience' ? 'active' : ''}`}
-              onClick={(e) => handleNavClick(e, '#experience')}
-            >
-              Experience
-            </a>
-          </li>
-          <li>
-            <a
-              href="#contact"
-              className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
-              onClick={(e) => handleNavClick(e, '#contact')}
-            >
-              Contact
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://drive.google.com/file/d/1rFibj9zdKVIfTgW2YhETGfWVq34bry5J/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nav-link"
-            >
-              Download my CV
-            </a>
-          </li>
-        </ul>
-      </nav>
+          <ul
+            className={`nav-links ${isMobileOpen ? 'is-open' : ''}`}
+            id="nav-links"
+            role="list"
+          >
+            {NAV_ITEMS.map((item) => {
+              const isActive = activeSection === item.id;
+              return (
+                <li key={item.id}>
+                  <a
+                    href={`#${item.id}`}
+                    className={`nav-link ${isActive ? 'active' : ''}`}
+                    aria-current={isActive ? 'location' : undefined}
+                    onClick={(e) => handleNavClick(e, item.id)}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              );
+            })}
+            <li className="nav-cv-item">
+              <a
+                href={CV_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-cv-link"
+                aria-label="View CV (opens in new tab)"
+                onClick={closeMobileMenu}
+              >
+                <span>CV</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
       <div
         className={`nav-backdrop ${isMobileOpen ? 'is-visible' : ''}`}
         onClick={closeMobileMenu}
         aria-hidden="true"
       />
-    </header>
+    </>
   );
 };
