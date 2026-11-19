@@ -6,6 +6,7 @@ export interface Publication {
   award?: string;
   authors: string;
   githubUrl?: string;
+  leaderboardUrl?: string;
   siteUrl?: string;
   siteTitle?: string;
   bibtex: string;
@@ -91,6 +92,7 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     id: 'tdtu-vilegalreb',
+    leaderboardUrl: 'https://nlp-kd-lab-tdtu.github.io/TDTU-ViLegalREB/',
     title: 'TDTU-ViLegalREB: Vietnamese Legal Retrieval Embedding Benchmark',
     venue:
       'Under review · [ACIIDS 2027] 19th Asian Conference on Intelligent Information and Database Systems',
@@ -111,7 +113,7 @@ export const PUBLICATIONS: Publication[] = [
     title:
       'FALCON: Forensic-Aware Language-Guided Contrastive Learning for Generalized Synthetic Image Detection',
     venue:
-      '[FITAT 2026] 18th International Conference on Frontiers of Information Technology, Applications and Tools',
+      'TBA - [FITAT 2026] 18th International Conference on Frontiers of Information Technology, Applications and Tools Proceeding',
     venueBadge: 'Scopus Indexed',
     award: 'Outstanding Paper Award',
     authors: 'Nguyen, Q. H., Ryu, K. H., Delina, M., & Pham, V. H.',
@@ -129,7 +131,7 @@ export const PUBLICATIONS: Publication[] = [
     title:
       'ASBW: A Frequency-Domain Analysis Approach for Distinguishing GAN-Generated Images from Real Images',
     venue:
-      '[DCEST 2026] International Conference on Digital Convergence in Economics, Society and Technology, pp. 95–105',
+      'TBA - [DCEST 2026] International Conference on Digital Convergence in Economics, Society and Technology Proceeding',
     award: 'Best Presentation Award',
     authors: 'Nguyen, Q. H., & Pham, V. H. (2026)',
     githubUrl: 'https://github.com/VictorNguyenLPN/ASBW',

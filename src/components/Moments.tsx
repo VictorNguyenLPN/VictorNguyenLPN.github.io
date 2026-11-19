@@ -98,6 +98,13 @@ export const Moments: React.FC = () => {
       <div className="container">
         <h2 className="section-heading reveal">Moments</h2>
 
+        <p className="moments-intro reveal">
+          A few fun facts about me: I specialized in chemistry in high school, love photography—especially
+          capturing landscapes—and enjoy playing sports in my free time. My interest in technology began
+          in sixth grade, when I discovered the Arduino ecosystem and worked on a few projects focused on
+          railway safety.
+        </p>
+
         <div className="moments-stack reveal">
           {/* Band 1: 5 conference & campus highlights */}
           <div className="moments-band moments-band--one">

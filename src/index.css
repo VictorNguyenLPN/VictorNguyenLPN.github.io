@@ -862,6 +862,13 @@ button {
 }
 
 /* ===== MOMENTS ===== */
+.moments-intro {
+  margin-bottom: var(--space-6);
+  font-size: var(--text-md);
+  color: var(--text-mid);
+  line-height: 1.65;
+}
+
 .moments-stack {
   display: flex;
   flex-direction: column;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Globe, Copy, Check, ChevronDown, X, Award } from 'lucide-react';
+import { Globe, Copy, Check, ChevronDown, X, Award, Trophy } from 'lucide-react';
 import { useClipboard } from '../hooks/useClipboard';
 import { PUBLICATIONS } from '../data/portfolio';
 import { GithubIcon } from './common/Icons';
@@ -72,6 +72,18 @@ export const Publications: React.FC = () => {
                     >
                       <Globe size={14} aria-hidden="true" />
                       <span>Site</span>
+                    </a>
+                  )}
+
+                  {pub.leaderboardUrl && (
+                    <a
+                      href={pub.leaderboardUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="action-pill"
+                    >
+                      <Trophy size={14} aria-hidden="true" />
+                      <span>Leaderboard</span>
                     </a>
                   )}
 
